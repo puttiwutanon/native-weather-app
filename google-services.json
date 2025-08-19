@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "148040382513",
+    "firebase_url": "https://react-native-task-maneger-app-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "react-native-task-maneger-app",
+    "storage_bucket": "react-native-task-maneger-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148040382513:android:336e861de8fac3efcd7d10",
+        "android_client_info": {
+          "package_name": "com.puttiwutanon.nativetaskmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfzW2-lv6N68pmRa3XwZgcU6hroqz8Cnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
