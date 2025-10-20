@@ -1,138 +1,26 @@
 import { StyleSheet } from 'react-native';
 import { useFonts } from "expo-font";
+import UVIndex from './navigation/uvIndex';
 
 
 
 export const styles = StyleSheet.create({
-  add_task: {
+  navbar:{
+    height: '8%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#2d2d30',
     position: 'absolute',
     bottom: 20,
-    right: 20,
+    marginHorizontal: 20,
+    borderRadius: 40,
   },
-  add_button: {
-    backgroundColor: '#111460',
-    padding: 24,
-    borderRadius: 100,
-    width: 80,
-    height: 80,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  navbar:{
-    height: 95,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily: 'Kanit',
-    paddingTop: 15,
-    fontSize: 20,
-    borderRadius: 40
-  },
-   tabBarItemStyle: {
-     borderRadius: 40,
-     overflow: 'hidden',
-   },
-   welcomeTextcontainer:{
-      display: 'flex',
-      flexDirection: 'column',
-      marginTop: 50,
-      marginLeft: 16,
-      fontFamily: 'kanit',
-      fontSize: 24
-   },
-   welcomeTexthello:{
-      fontFamily: 'Kanit',
-      fontSize: 24,
-      color: '#808080'
-   },
-  welcomeTexttask:{
-      fontFamily: 'Kanit',
-      fontSize: 32
-   },
-addTaskcontainer: {
-  width: 300,
-  height: 390,
-  padding: 20,
-  backgroundColor: '#fff',
-  borderRadius: 16,
-  elevation: 10,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 4 },
-  shadowOpacity: 0.3,
-  shadowRadius: 6,
-},
-centeredWrapper: {
-  flex: 1,
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: [
-    { translateX: -150 },  // half of addTaskcontainer width (300)
-    { translateY: -195 }   // half of addTaskcontainer height (390)
-  ],
-  zIndex: 10,
-},
-taskContainer01: {
-  flexDirection: 'column',
-  alignItems: 'flex-start', 
-},
-taskContainer02: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'flex-start', 
-},
-  inputContainer01:{
-    fontFamily: 'Kanit',
-    padding: 5,
-    borderColor: '#808080',
-    borderWidth: 2,
-    width: 200,
-    borderRadius: 8,
-    margin: 8,
-    height: 40
-  },
-  inputContainer02:{
-    fontFamily: 'Kanit',
-    padding: 5,
-    borderColor: '#808080',
-    borderWidth: 2,
-    width: 60,
-    borderRadius: 8,
-    margin: 8,
-    height: 40
-  },
-  buttonContainer:{
-    margin: 5,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  buttonItem:{
-    margin: 5,
-    borderRadius: 100,
-    backgroundColor: '#111460'
-  },
-  AddCancelbutton:{
-    borderRadius: 100,
-    backgroundColor: '#111460',
-    fontSize: 34,
-    alignItems:'center',
-    justifyContent: 'center',
-    margin: 5,
-    width: 120,
-    height: 50
-  },
-  buttonText:{
-    fontSize: 24,
-    fontFamily: 'Kanit',
-    color: '#fff',
-    alignItems:'center',
-    justifyContent: 'center'
+  tabBarItemStyle: {
+    borderRadius: 40,
+    overflow: 'hidden',
+    marginVertical: 20, 
+    height: 60,
   },
   calendar: {
     borderWidth: 1,
@@ -148,33 +36,235 @@ taskContainer02: {
     fontSize: 24,
     marginLeft: 24
   },
-  taskBox:{
-    marginBottom: 10,
-    marginTop: 10,
-    backgroundColor: '#fff',
-    borderRadius: 20,
-    height: 90,
-    padding: 15,
-    paddingBottom: 10,
-    display: 'flex',
-    alignItems: 'flex-start',
-    justifyContent: 'center'
-  },
-  dimOverlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.3)', 
-    zIndex: 5,
-  },
-  delete_task:{
-    position: 'absolute',
-    bottom: 22.5,
-    right: 25,
-    backgroundColor: '#cc1100',
+  searchbar:{
     padding: 10,
-    borderRadius: 10
+    border: "none",
+    borderRadius: 12,
+    top: 20,
+    width: '90%',
+    backgroundColor: "#2d2d30",
+    color: "#fff",
+    alignSelf: 'center'
+  },
+    searchbarInput:{
+    color: "#fff",
+  },
+  mainCityTemp: {
+    alignSelf: 'center'
+  },    
+  weatherInfo:{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      color: '#fff'
+  },
+  weatherText:{
+    color: '#fff',
+    fontSize: 18,
+    alignSelf: 'center',
+    padding: 4
+  },
+  currentWeatherImage: {
+    width: '50%',
+    height: '50%',
+    aspectRatio: 1,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+  },
+  hourlyForecast:{
+    borderRadius: 16,
+    backgroundColor: '#2d2d30',
+    width: '90%',
+    height: '20%',
+    padding: 2,
+    alignSelf: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    paddingVertical: 30,
+    alignSelf: 'center',
+    bottom: 100
+  },
+  hourlyForecastTemp:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    paddingHorizontal: 20
+  },
+  hourlyForecastTempItems:{
+    width: '100%',                  
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 8,
+    color: '#fff',
+    fontSize: 20,
+    paddingHorizontal: 10
+  },
+  hourlyForecastIcon: {
+  width: '80%',
+  height: '80%',
+  resizeMode: 'contain',
+  alignSelf: 'center',
+},
+  sevenDayForecast:{
+    borderRadius: 16,
+    backgroundColor: '#2d2d30',
+    width: '90%',
+    height: '20%',
+    padding: 2,
+    alignSelf: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    paddingVertical: 30,
+    alignSelf: 'center',
+  },
+  sevenDayForecastTemp:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    paddingHorizontal: 20
+  },
+  sevenDayForecastTempItems:{
+    width: '100%',                  
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 8,
+    color: '#fff',
+    fontSize: 20,
+    paddingHorizontal: 10
+  },
+  sevenDayForecastIcon: {
+  width: '80%',
+  height: '80%',
+  resizeMode: 'contain',
+  alignSelf: 'center',
+},
+
+  sevenDayForecastHeader:{
+    color: '#fff',
+    fontSize: 20,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    marginLeft: '16',
+    marginTop: '16',
+    marginBottom: '5'
+  },
+  weatherTextvalue:{
+    color: '#fff',
+    fontSize: 18,
+    alignSelf: 'center',
+    padding: 4
+  },
+  minmaxTemp:{
+    marginTop: '40'
+  },
+  aqi:{
+    borderRadius: 16,
+    backgroundColor: '#2d2d30',
+    width: '90%',
+    height: '15%',
+    padding: 2,
+    alignSelf: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    paddingVertical: 20,
+    marginTop: 30,
+    alignSelf: 'center',
+  },
+  aqiHeader:{
+    color: '#fff',
+    fontSize: 24,
+    alignSelf: 'left',
+    padding: 2,
+    marginLeft: 12,
+    alignItems: 'center'
+
+  },
+  aqiValue:{
+    color: '#fff',
+    fontSize: 18,
+    alignSelf: 'left',
+    padding: 2,
+    marginLeft: 12,
+    alignItems: 'center'   
+  },
+  SunRiseSet:{
+    borderRadius: 16,
+    backgroundColor: '#2d2d30',
+    width: '43%',
+    height: 160,
+    padding: 1,
+    justifyContent: 'flex-start',
+    display: 'flex',
+    flexDirection: 'column',
+    paddingVertical: 30,
+    marginTop: 30,   
+    color: '#fff',
+    marginLeft: '20'
+  },
+  sunRise:{
+    color: '#fff',
+    fontSize: 18,
+    alignSelf: 'left',
+    padding: 0.5,
+    marginLeft: 12,
+  },
+  sunRiseHeader:{
+    color: '#fff',
+    fontSize: 24,
+    alignSelf: 'left',
+    padding: 2,
+    marginLeft: 12,
+    alignItems: 'center'
+  },
+  sunRiseValue:{
+    color: '#fff',
+    fontSize: 18,
+    alignSelf: 'left',
+    padding: 2,
+    marginLeft: 12,
+    alignItems: 'center'  
+  },
+  sunSet:{
+    color: '#fff',
+    fontSize: 18,
+    alignSelf: 'left',
+    padding: 0.5,
+    marginLeft: 12,
+  },
+  UVindex:{
+    borderRadius: 16,
+    backgroundColor: '#2d2d30',
+    width: '43%',
+    height: 160,
+    padding: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    paddingVertical: 30,
+    marginTop: 30,   
+    color: '#fff',
+    marginRight: '20',
+  },
+  UVindexHeader:{
+    color: '#fff',
+    fontSize: 24,
+    alignSelf: 'left',
+    padding: 2,
+    marginLeft: 12,
+    alignItems: 'center'
+  },
+  UVindexValue:{
+    color: '#fff',
+    fontSize: 18,
+    alignSelf: 'left',
+    padding: 2,
+    marginLeft: 12,
+    alignItems: 'center'     
   }
 });
+
+/*
+
+*/ 

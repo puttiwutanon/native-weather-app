@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Navbar from './navigation/navbar';
 import { useFonts } from 'expo-font';
 
@@ -13,8 +13,16 @@ export default function App() {
     return null;
   }
 
+  const Dark = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: '#1e1e1e', 
+    },
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={Dark}>
       <Navbar />
     </NavigationContainer>
   );
